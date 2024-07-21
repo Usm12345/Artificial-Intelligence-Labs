@@ -1,0 +1,114 @@
+<aiml version="1.0">
+    <category>
+        <pattern>HELLO</pattern>
+        <template>Hi there!</template>
+    </category>
+    
+    <category>
+        <pattern>WHAT IS YOUR NAME</pattern>
+        <template>My name is A.T.O.M . Nice to meet you!</template>
+    </category>
+    
+    <category>
+        <pattern>WHAT IS <star> AGE</pattern>
+        <template>I'm sorry, I don't know my age.</template>
+    </category>
+    
+    <category>
+        <pattern>TELL ME A JOKE</pattern>
+        <template>
+            <random>
+                <li>Why don't scientists trust atoms? Because they make up everything!</li>
+                <li>Why don't some couples go to the gym? Because some relationships don't work out!</li>
+                <li>Why did the scarecrow win an award? Because he was outstanding in his field!</li>
+                <li>Why was the chicken confused? because it didn't Unda stand ..</li>
+                <li>What did the nose said to the finger ? Stop picking on me !!!</li>
+
+
+            </random>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>WHAT IS MY NAME</pattern>
+        <template>Your name is <get name="name" />.</template>
+    </category>
+    
+    <category>
+        <pattern>MY NAME IS *</pattern>
+        <template>
+            <set name="name"><star /></set>
+            Nice to meet you, <get name="name" />!
+        </template>
+    </category>
+    
+    <category>
+        <pattern>DO YOU REMEMBER MY NAME</pattern>
+        <template>Yes, your name is <get name="name" />.</template>
+    </category>
+    
+    <category>
+        <pattern>DO YOU KNOW MY NAME</pattern>
+        <template>Yes, I know your name. It's <get name="name" />.</template>
+    </category>
+    
+    <category>
+        <pattern>TELL ME ABOUT YOURSELF</pattern>
+        <template>I am a simple AIML-based chatbot. My purpose is to chat with you and answer your questions.</template>
+    </category>
+    
+    <topic name="MATH">
+        <category>
+            <pattern>WHAT IS THE SUM OF <set name="num1"><star /></set> AND <set name="num2"><star /></set></pattern>
+            <template>The sum of <get name="num1" /> and <get name="num2" /> is <think><set name="result"><get name="num1" /> + <get name="num2" /></set></think><get name="result" />.</template>
+        </category>
+        
+        <category>
+            <pattern>WHAT IS THE PRODUCT OF <set name="num1"><star /></set> AND <set name="num2"><star /></set></pattern>
+            <template>The product of <get name="num1" /> and <get name="num2" /> is <think><set name="result"><get name="num1" /> * <get name="num2" /></set></think><get name="result" />.</template>
+        </category>
+    </topic>
+    
+    <category>
+        <pattern>YOU ARE FUNNY</pattern>
+        <template>Thank you! I try my best to entertain.</template>
+    </category>
+    
+    <category>
+        <pattern>I NEED HELP</pattern>
+        <template>Of course! How can I assist you?</template>
+    </category>
+    
+    <category>
+        <pattern>GOODBYE</pattern>
+        <template>Goodbye! Have a great day!</template>
+    </category>
+    
+    <category>
+        <pattern>WHAT DO YOU THINK ABOUT <set name="topic"><star /></set></pattern>
+        <template>
+            <think><set name="opinion">I think <get name="topic" /> is interesting.</set></think>
+            I think <get name="opinion" /> What do you think?
+        </template>
+    </category>
+    
+    <category>
+        <pattern>DO YOU AGREE</pattern>
+        <template>Yes, I agree with you.</template>
+    </category>
+    
+    <category>
+        <pattern>DO YOU DISAGREE</pattern>
+        <template>No, I don't disagree.</template>
+    </category>
+    
+    <category>
+        <pattern>IF <condition name="weather">RAINING</condition> THEN I WILL <set name="activity">STAY INDOORS</set></pattern>
+        <template>
+            <condition name="weather" value="RAINING">
+                <think><set name="activity">STAY INDOORS</set></think>
+            </condition>
+            If it's raining, you will <get name="activity" />.
+        </template>
+    </category>
+</aiml>
